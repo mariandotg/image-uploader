@@ -1,27 +1,6 @@
-import React from 'react'
 import '../styles/App.css'
+import Card from './components/Card'
 
-const App: () => JSX.Element = () => {
-  const [count, setCount] = React.useState(0)
-
-  return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => { setCount((count) => count + 1) }}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-        <label>Select a file:</label>
-        <input type="file" id="myfile" name="myfile"></input>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+const App: () => JSX.Element = () => <Card />
 
 export default App
