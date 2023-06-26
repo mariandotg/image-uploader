@@ -1,13 +1,13 @@
-import React from 'react'
+import Button from './Button'
 
 const Card: () => JSX.Element = () => {
-  const [count, setCount] = React.useState(0)
+  const handleClick: () => void = () => { console.log('test button') }
 
   return (
     <div className="card">
-      <button onClick={() => { setCount((count) => count + 1) }}>
-        count is {count}
-      </button>
+      <Button onClickHandler={handleClick}>
+        Choose a file
+      </Button>
       <p>
         Edit <code>src/App.tsx</code> and save to test HMR
       </p>
