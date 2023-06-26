@@ -39,6 +39,8 @@
 }
 
 .button-primary {
+    transition: all 0.25s;
+    cursor: pointer;
     outline: none;
     border: none;
     border-radius: 8px;
@@ -49,6 +51,10 @@
     font-family: "Noto sans", sans-serif;
     font-weight: 500;
     letter-spacing: -0.42px;
+}
+
+.button-primary:hover {
+    background-color: hsla(214, 84%, 40%, 1);
 }
 
 .image-uploader-container {
@@ -70,6 +76,7 @@
 }
 
 .image-uploader::-webkit-file-upload-button {
+    cursor: pointer;
     opacity: 0;
     z-index: 9998;
     height: 100%;
@@ -92,6 +99,21 @@
     color: var(--light-gray);
     letter-spacing: -0.42px;
     font-weight: 500;
+}
+
+.dark-hover {
+    transition: all 0.25s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: var(--dark-gray);
+}
+
+.image-uploader-container:hover .dark-hover {
+    opacity: 0.15;
 }
 
 .image-uploader-container > div > img {

@@ -4,6 +4,7 @@ const ImageUploader: () => JSX.Element = () => {
     <div className="image-uploader-container">
       <input type='file' className="image-uploader"/>
       <div>
+        <div className="dark-hover"></div>
         <img src="../public/image.svg"/>
         <span>Drag & Drop your image here</span>
       </div>
