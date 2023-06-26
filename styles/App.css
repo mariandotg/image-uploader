@@ -45,6 +45,10 @@
     padding: 8px 16px;
     color: var(--white);
     background-color: var(--blue);
+    font-size: 0.75rem;
+    font-family: "Noto sans", sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.42px;
 }
 
 .image-uploader-container {
