@@ -14,3 +14,51 @@
     color: var(--white);
     background-color: var(--blue);
 }
+
+.image-uploader-container {
+    position: relative;
+    width: 338px;
+    height: 220px;
+    border: 1px dashed var(--light-blue);
+    border-radius: 12px;
+    background-color: var(--blueish-white);
+}
+
+.image-uploader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+}
+
+.image-uploader::-webkit-file-upload-button {
+    opacity: 0;
+    z-index: 9998;
+    height: 100%;
+    width: 100%;
+}
+
+.image-uploader-container > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    font-size: 0.75rem;
+    color: var(--light-gray);
+    letter-spacing: -0.42px;
+    font-weight: 500;
+}
+
+.image-uploader-container > div > img {
+    width: 115px;
+    height: 89px;
+}

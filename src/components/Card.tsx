@@ -1,18 +1,15 @@
 import Button from './Button'
+import ImageUploader from './ImageUploader'
 
 const Card: () => JSX.Element = () => {
   const handleClick: () => void = () => { console.log('test button') }
 
   return (
     <div className="card">
+      <ImageUploader />
       <Button onClickHandler={handleClick}>
         Choose a file
       </Button>
-      <p>
-        Edit <code>src/App.tsx</code> and save to test HMR
-      </p>
-      <label>Select a file:</label>
-      <input type="file" id="myfile" name="myfile"></input>
     </div>
   )
 }
