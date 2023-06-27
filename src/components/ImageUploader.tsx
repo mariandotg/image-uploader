@@ -1,16 +1,41 @@
+import axios from 'axios'
 import React, { type ChangeEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { v4 as uuidv4 } from 'uuid'
 
 const ImageUploader: () => JSX.Element = () => {
   const [loading, setLoading] = React.useState<boolean>(false)
   const navigate = useNavigate()
-  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+
+  const postImage: (formData: FormData) => Promise<void> = async (formData) => {
+    try {
+      const response = await axios.post('https://api.cloudinary.com/v1_1/dgsft8yky/image/upload', formData)
+      console.log(response)
+      return response.data
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const handleFileChange: (e: ChangeEvent<HTMLInputElement>) => void = (e) => {
     setLoading(true)
-    setTimeout(() => {
-      if (e.target.files != null) {
-        setLoading(false)
-        navigate(`/${e.target.files[0]?.name}`)
+
+    const formData = new FormData(
+
+    )
+    const nuevoUUID = uuidv4()
+    setTimeout(async () => {
+      try {
+        if (e.target.files != null) {
+          formData.append('file', e.target.files[0])
+          formData.append('upload_preset', 'lastzb0v')
+          formData.append('folder', 'dev-challenges-image-uploader')
+          await postImage(formData)
+          setLoading(false)
+          navigate(`/${nuevoUUID}`)
+        }
+      } catch (error) {
+        console.log(error)
       }
     }, 2000)
   }
