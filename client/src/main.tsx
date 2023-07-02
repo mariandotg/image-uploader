@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+import Index from './Index.tsx'
 import {
   createBrowserRouter,
   RouterProvider
@@ -11,7 +11,7 @@ import UploadedImage from './UploadedImage.tsx'
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />
+    element: <Index />
   },
   {
     path: '/:id',
