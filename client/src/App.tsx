@@ -1,6 +1,6 @@
 import '../styles/App.css'
-import Card from './components/Card'
+import UploadImageCard from './components/UploadImageCard'
 
-const App: () => JSX.Element = () => <Card />
+const App: () => JSX.Element = () => <UploadImageCard />
 
 export default App
